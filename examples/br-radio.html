@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="br-controls.js"></script>
+  <script type="text/javascript">
+    angular.module( "testApp", [ "br.controls" ] )
+    .controller( "testCtrl", function(){});
+  </script>
+</head>
+
+<body ng-controller="testCtrl">
+  <form>
+    <label>
+      <br-radio data-model="model.COLOR_RED" data-id="COLOR_RED" data-name="COLOR" data-value="1" data-off-value="0"></br-radio>
+      <span>RED</span>
+    </label>
+    <label>
+      <br-radio data-model="model.COLOR_YELLOW" data-id="COLOR_YELLOW" data-name="COLOR" data-value="1" data-off-value="0"></br-radio>
+      <span>YELLOW</span>
+    </label>
+    <label>
+      <br-radio data-model="model.COLOR_GREEN" data-id="COLOR_GREEN" data-name="COLOR" data-value="1" data-off-value="0"></br-radio>
+      <span>RED</span>
+    </label>
+  </form>
+  <hr>
+  <table>
+    <tbody>
+      <tr>
+        <td>COLOR_RED</td>
+        <td>{{model.COLOR_RED}}</td>
+      </tr>
+      <tr>
+        <td>COLOR_YELLOW</td>
+        <td>{{model.COLOR_YELLOW}}</td>
+      </tr>
+      <tr>
+        <td>COLOR_GREEN</td>
+        <td>{{model.COLOR_GREEN}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
