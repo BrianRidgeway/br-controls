@@ -10,7 +10,7 @@ angular.module( 'br.controls', [] )
       model: "=",
       initiate: "="
     },
-    template: '<input type="radio" ng-model="model" ng-change="check()" name="{{name}}" id="{{id}}" ng-value="value">',
+    template: '<input type="radio" ng-model="model" name="{{name}}" id="{{id}}" ng-value="value">',
     link: function( scope ,element, attributes ){
       if( scope.initiate === undefined ){
         scope.initiated = true;
