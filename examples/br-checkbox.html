@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="br-controls.js"></script>
+  <script type="text/javascript">
+    angular.module( "testApp", [ "br.controls" ] )
+    .controller( "testCtrl", function(){});
+  </script>
+</head>
+
+<body ng-controller="testCtrl">
+  <form>
+    <label>
+      <input type="checkbox" class="br-checkbox" data-initiate="'\'' + screen + '\' == \'screen3\''" ng-model="model.DAY_SUNDAY" id="DAY_SUNDAY" name="DAY" ng-true-value="1" ng-false-value="0"></input>
+      <span>SUNDAY</span>
+    </label>
+    <label>
+      <input type="checkbox" class="br-checkbox" data-initiate="'\'' + screen + '\' == \'screen3\''" ng-model="model.DAY_MONDAY" id="DAY_MONDAY" name="DAY" ng-true-value="1" ng-false-value="0"></input>
+      <span>MONDAY</span>
+    </label>
+  </form>  
+  <hr>
+  <table>
+    <tbody>
+      <tr>
+        <td>DAY_SUNDAY</td>
+        <td>{{model.DAY_SUNDAY}}</td>
+      </tr>
+      <tr>
+        <td>DAY_MONDAY</td>
+        <td>{{model.DAY_MONDAY}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
