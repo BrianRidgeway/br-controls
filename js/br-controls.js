@@ -4,25 +4,25 @@ angular.module( 'br.controls', [] )
     restrict: 'C',
     scope: {
       ngModel: '=',
-      initiate: "="
+      activate: "="
     },
     link: function( scope ,element, attributes ){
-      if( scope.initiate === undefined ){
-        scope.initiated = true;
+      if( scope.activate === undefined ){
+        scope.activated = true;
       }
-      scope.isInitiated = function(){
-        return ( scope.initiate === undefined || eval(scope.initiate ))
+      scope.isActivated = function(){
+        return ( scope.activate === undefined || eval(scope.activate ))
       }
-      scope.$watch('isInitiated()', function( active ){
-        if( !scope.initiated && active ){
-          scope.initiated = true
+      scope.$watch('isActivated()', function( active ){
+        if( !scope.activated && active ){
+          scope.activated = true
           if( !element[0].checked ){
             scope.ngModel = attributes.brFalseValue;
           }
         }
       })
       scope.$watch( "isChecked()", function(newStatus){
-        if( scope.initiated ){
+        if( scope.activated ){
           if( newStatus ){
             scope.ngModel = attributes.value
           }
@@ -42,18 +42,18 @@ angular.module( 'br.controls', [] )
     restrict: 'C',
     scope: {
       ngModel: '=',
-      initiate: "="
+      activate: "="
     },
     link: function( scope ,element, attributes ){
-      if( scope.initiate === undefined ){
-        scope.initiated = true;
+      if( scope.activate === undefined ){
+        scope.activated = true;
       }
-      scope.isInitiated = function(){
-        return ( scope.initiate === undefined || eval(scope.initiate ))
+      scope.isActivated = function(){
+        return ( scope.activate === undefined || eval(scope.activate ))
       }
-      scope.$watch('isInitiated()', function( active ){
-        if( !scope.initiated && active ){
-          scope.initiated = true
+      scope.$watch('isActivated()', function( active ){
+        if( !scope.activated && active ){
+          scope.activated = true
           if( !element[0].checked ){
             scope.ngModel = attributes.ngFalseValue;
           }
