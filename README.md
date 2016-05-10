@@ -1,10 +1,10 @@
 # br-controls
 AngularJS HTML5 Controls with different behaviors
+[Plunker](https://plnkr.co/edit/4hpqoFnI1hbdkLsbDPgi?p=preview)
 
 For meeting requirements that do not align with typical HTML5 control behaviors.
 
 ## Radio
-[Plunker](https://plnkr.co/edit/4hpqoFnI1hbdkLsbDPgi?p=preview)
 
 br-radio adds 2 new features to the radio control
 
@@ -14,11 +14,9 @@ br-radio adds 2 new features to the radio control
 
 #### Normal Angular radio group:
 
-    <input type="radio" id="sex_male" name="sex" value="1" model="sex">
-    <label for="sex_male">Male</label>
-    <input type="radio" id="sex_female" name="sex" value="2" model="sex">
-    <label for="sex_female">Feale</label>
-    
+    <input type="radio" class="br-radio" id="sex_male" name="sex" value="1" model="sex">
+    <input type="radio" class="br-radio" id="sex_female" name="sex" value="2" model="sex">
+
 Reports:
 
     sex=1
@@ -28,11 +26,9 @@ Reports:
 
 #### br-radio group:
 
-    <br-radio id="sex_male" name="sex" value="1" off-value="0" model="sex_male">
-    <label for="sex_male">Male</label>
-    <br-radio id="sex_female" name="sex" value="1" off-value="0" model="sex_female">
-    <label for="sex_female">Female</label>
-  
+    <input type="radio" id="sex_male" name="sex" value="1" br-false-value="0" ng-model="sex_male">
+    <input type="radio" id="sex_female" name="sex" value="1" br-false-value="0" ng-model="sex_female">
+
 Reports: 
 
     sex_male=1
@@ -41,3 +37,14 @@ Reports:
   
     sex_male=0
     sex_female=1
+
+## Checkbox
+
+br-checkbox adds 1 new feature
+
+1) Allows for ngFalseValue to be applied the first time the "activate" string evaluates to true or immediately if "activate" === undefined (instead of when a checkbox has been unchecked).
+
+
+    <input type="checkbox" class="br-checkbox" activate="'true'" id="sex_male" name="sex" ng-true-value="1" ng-false-value="0" ng-model="sex_male">
+    <input type="checkbox" class="br-checkbox" activate="'true" id="sex_female" name="sex" ng-true-value="1" ng-false-value="0" ng-model="sex_female">
+
